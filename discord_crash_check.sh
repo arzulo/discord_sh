@@ -29,9 +29,13 @@ for dir in $BOTS_PATH/*
 do
 	BASENAME=$(basename $dir)
 	CURR_BOT_PATH=$BOTS_PATH/$BASENAME
-	screen -list | grep -q "$BASENAME"
 	# if ! screen -list | grep -q "$BASENAME"
-	if [ $? -ne 0 ] || [ $FORCE_RESET -eq 1 ]
+	if [ $FORCE_RESET -eq 1 ]; then
+		echo "Killing screen $BASENAME"
+		screen -S $BASENAME -X quit
+	fi
+	screen -list | grep -q "$BASENAME"
+	if [ $? -ne 0 ] 
 		 then
 			 echo "$BASENAME isn't up, probably a crash?.  Starting bot back up"
 			# /bin/bash $SCRIPTS_PATH/start_bot.sh $BASENAME
