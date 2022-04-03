@@ -4,7 +4,11 @@
 # It is assumed that the `discord_sh` directory is at the same level as your `discord_bots` directory
 # `DISCORD_BOTS_FOLDER_NAME` is a folder containing several sub-folders of individual node.js based discord bots
 # 			-- default name for this folder is `discord_bots`
-#BOTS_PATH=/home/arzulo/Dropbox/discord_bots
+
+# Log timestamp
+TS_DATE=$(date)
+echo "[ $TS_DATE ]"
+
 USER=$(whoami)
 DISCORD_BOTS_FOLDER_NAME="discord_bots"
 if [ $EUID -eq 0 ]; then # running as root, no "home" directory
