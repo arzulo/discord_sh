@@ -12,7 +12,6 @@ if [ $EUID -eq 0 ]; then # running as root, no "home" directory
 else
 	DISCORD_RESOURCES_PATH=/home/$USER/discord
 fi
-DISCORD_RESOURCES_PATH=/home/$USER/discord
 BOTS_PATH=$DISCORD_RESOURCES_PATH/$DISCORD_BOTS_FOLDER_NAME
 SCRIPTS_PATH=$DISCORD_RESOURCES_PATH/discord_sh
 
