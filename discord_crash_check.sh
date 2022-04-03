@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Setup the base folder for where the bots and scripts sit
 # It is assumed that the `discord_sh` directory is at the same level as your `discord_bots` directory
@@ -7,7 +7,7 @@
 #BOTS_PATH=/home/arzulo/Dropbox/discord_bots
 USER=$(whoami)
 DISCORD_BOTS_FOLDER_NAME="discord_bots"
-if [[ $EUID -eq 0 ]]; then # running as root, no "home" directory
+if [ $EUID -eq 0 ]; then # running as root, no "home" directory
 	DISCORD_RESOURCES_PATH=/$USER/discord
 else
 	DISCORD_RESOURCES_PATH=/home/$USER/discord
