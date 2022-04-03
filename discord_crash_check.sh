@@ -7,6 +7,11 @@
 #BOTS_PATH=/home/arzulo/Dropbox/discord_bots
 USER=$(whoami)
 DISCORD_BOTS_FOLDER_NAME="discord_bots"
+if [ "$USER" = "root" ]; then
+	DISCORD_RESOURCES_PATH=/$USER/discord
+else
+	DISCORD_RESOURCES_PATH=/home/$USER/discord
+fi
 DISCORD_RESOURCES_PATH=/home/$USER/discord
 BOTS_PATH=$DISCORD_RESOURCES_PATH/$DISCORD_BOTS_FOLDER_NAME
 SCRIPTS_PATH=$DISCORD_RESOURCES_PATH/discord_sh
