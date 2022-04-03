@@ -7,7 +7,7 @@
 #BOTS_PATH=/home/arzulo/Dropbox/discord_bots
 USER=$(whoami)
 DISCORD_BOTS_FOLDER_NAME="discord_bots"
-if [ "$USER" = "root" ]; then
+if [[ $EUID -eq 0 ]]; then # running as root, no "home" directory
 	DISCORD_RESOURCES_PATH=/$USER/discord
 else
 	DISCORD_RESOURCES_PATH=/home/$USER/discord
